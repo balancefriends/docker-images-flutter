@@ -1,4 +1,4 @@
-FROM cirrusci/android-sdk:30
+FROM ghcr.io/amondnet/android-sdk:30
 
 USER root
 
@@ -14,4 +14,14 @@ RUN git clone --depth 1 --branch ${FLUTTER_VERSION} https://github.com/flutter/f
 
 RUN yes | flutter doctor --android-licenses \
     && flutter doctor \
+    && flutter precache \
     && chown -R root:root ${FLUTTER_HOME}
+    
+
+RUN dart pub global activate melos \
+    && dart pub global activate coverage \
+    && dart pub global activate full_coverage \
+    && dart pub global activate remove_from_coverage \
+    && dart pub global activate grinder
+
+RUN bash <(curl -s https://raw.githubusercontent.com/objectbox/objectbox-dart/main/install.sh)
