@@ -23,5 +23,3 @@ RUN dart pub global activate melos \
     && dart pub global activate full_coverage \
     && dart pub global activate remove_from_coverage \
     && dart pub global activate grinder
-
-RUN bash <(curl -s https://raw.githubusercontent.com/objectbox/objectbox-dart/main/install.sh)
