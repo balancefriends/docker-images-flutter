@@ -1,4 +1,4 @@
-FROM ghcr.io/amondnet/android-sdk:30
+FROM ghcr.io/amondnet/android-sdk:33
 
 USER root
 
