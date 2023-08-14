@@ -36,7 +36,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:  
-        flutter-version: [ '3.10.0', '3.10.5', '3.10.6' ]
+        flutter-version: [ '3.10.0', '3.10.5', '3.10.6', 'beta' ]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
